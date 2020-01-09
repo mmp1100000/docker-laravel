@@ -35,6 +35,14 @@ tinker:
 	docker-compose exec app php artisan tinker
 dump:
 	docker-compose exec app php artisan dump-server
+migration:
+	docker-compose exec app php artisan make:migration ${migration_name} --create=${create}
+model:
+	docker-compose exec app php artisan make:model ${name}
+middleware:
+	docker-compose exec app php artisan make:middleware ${name}
+migrate:
+	docker-compose exec app php artisan migrate
 test:
 	docker-compose exec app php ./vendor/bin/phpunit
 cache:
